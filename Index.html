@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta de Presentación</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            height: 100vh;
+            margin: 10px;
+        }
+
+        .container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+        .card {
+            background: #35bfe9;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            max-width: 350px;
+            width: 100%;
+            text-align: center;
+        }
+
+            .card img {
+                width: 120px;
+                height: 120px;
+                object-fit: cover;
+                border-radius: 50%;
+                margin-bottom: 15px;
+            }
+
+        .name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .role {
+            color: #191515;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .info {
+            margin: 8px 0;
+            font-size: 0.95rem;
+        }
+
+        .qr {
+            margin-top: 15px;
+        }
+
+            .qr img {
+                width: 100px;
+                height: 100px;
+            }
+
+        a {
+            color: #0073e6;
+            text-decoration: none;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="qr">
+            <img src="QR.png" alt="Código QR">
+        </div>
+
+
+
+
+        <div class="card">
+       
+            <img src="FotoProf.jpg" alt="Foto profesional">
+    
+           
+            <p class="name">Eric J. Rodríguez Ortega</p>
+            <p class="role">Estudiante de Ciencias de computadoras</p>
+            <p class="role info">Segundo Año</p>
+            <p class="info">📞 (+1) 787-975-0750</p>
+            <p class="info">✉️ <a href="mailto:ericrodz395@gmail.com">Email</a></p>
+    
+           
+            
+        </div>
+
+
+    </div>
+    
+</body>
+</html>
+
