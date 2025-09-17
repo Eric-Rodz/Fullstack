@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tabla Resumé (Responsive)</title>
+    <style>
+        :root {
+            --bg: #f7f9fc;
+            --card: #ffffff;
+            --text: #222;
+            --muted: #6b7280;
+            --head: #2c3e50;
+            --border: #e5e7eb;
+            --stripe: #f3f4f6;
+            --hover: #e6f7ff;
+        }
+
+        body {
+            margin: 24px;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        h2 {
+            margin: 0 0 12px
+        }
+
+        .table-wrap {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0,0,0,.06);
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 16px;
+        }
+
+        caption {
+            text-align: left;
+            padding: 12px 16px;
+            color: var(--muted);
+            font-size: 0.95rem;
+            background: linear-gradient(#fff,#fafafa);
+            border-bottom: 1px solid var(--border);
+        }
+
+        thead th {
+            background: var(--head);
+            color: #fff;
+            text-align: left;
+            padding: 12px 16px;
+            font-weight: 600;
+            letter-spacing: .2px;
+        }
+
+        tbody td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+
+        tbody tr:nth-child(even) td {
+            background: var(--stripe);
+        }
+
+        tbody tr:hover td {
+            background: var(--hover);
+        }
+
+        /* ---------- Responsive: tabla -> tarjetas ---------- */
+        @media (max-width: 640px) {
+            thead {
+                /* Oculta encabezados visualmente pero accesibles para lectores */
+                position: absolute;
+                clip: rect(1px,1px,1px,1px);
+                height: 1px;
+                width: 1px;
+                overflow: hidden;
+            }
+
+            table, tbody, tr, td {
+                display: block;
+                width: 100%;
+            }
+
+                tbody tr {
+                    background: var(--card);
+                    border-bottom: 1px solid var(--border);
+                }
+
+                tbody td {
+                    display: grid;
+                    grid-template-columns: 40% 1fr;
+                    gap: 12px;
+                    padding: 10px 16px;
+                    border: 0;
+                    border-bottom: 1px solid var(--border);
+                }
+
+                tbody tr:last-child td:last-child {
+                    border-bottom: 0;
+                }
+
+                tbody td::before {
+                    content: attr(data-label);
+                    font-weight: 600;
+                    color: var(--muted);
+                }
+                /* Quita el rayado alterno en móvil para look tipo tarjeta */
+                tbody tr:nth-child(even) td {
+                    background: transparent;
+                }
+
+                tbody tr:hover td {
+                    background: transparent;
+                }
+
+            .table-wrap {
+                box-shadow: none;
+                border-radius: 10px;
+            }
+
+            caption {
+                border-bottom: 0;
+                background: transparent;
+                padding-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Resumé</h2>
+    <div class="table-wrap" role="region" aria-labelledby="titulo-tabla">
+        <table aria-describedby="desc-tabla">
+            <caption id="titulo-tabla">Resumen de Eric J. Rodriguez Ortega</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Categoría</th>
+                    <th scope="col">Detalles</th>
+                </tr>
+            </thead>
+            <tbody id="desc-tabla">
+                <tr>
+                    <td data-label="Categoría">Educación</td>
+                    <td data-label="Detalle">B.S. Ciencias de Computadoras — Universidad Interamericana de Puerto Rico (2023–Presente)</td>
+                </tr>
+                          
+                <tr>
+                    <td data-label="Categoría">Experiencia</td>
+                    <td data-label="Detalle">N/A</td>
+                </tr>
+                <tr>
+                    <td data-label="Categoría">Proyectos</td>
+                    <td data-label="Detalle">“Sistema Escolar” (C++/MySQL), “Portafolio Web” (HTML/CSS/JS)</td>
+                </tr>
+                <tr>
+                    <td data-label="Categoría">Lenguajes</td>
+                    <td data-label="Detalle">HTML, CSS, Java, C++, SQL, C#</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
